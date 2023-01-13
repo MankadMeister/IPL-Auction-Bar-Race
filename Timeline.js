@@ -286,6 +286,11 @@ var Bar = function (i, assigned_width, name, entity) {
     this.g = 165;
     this.b = 0;
   }
+  else {
+    this.r = pickedCol[0];
+    this.g = pickedCol[1];
+    this.b = pickedCol[2];
+  }
 };
 
 Bar.prototype.show = function () {

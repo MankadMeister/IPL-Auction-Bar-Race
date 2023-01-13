@@ -5,6 +5,8 @@ function preload() {
   subscribe = loadImage('MankadMeister-logo-small.png');
 }
 
+var playTime = 0;
+
 function setup() {
   smooth();
   frameRate(300);
@@ -54,14 +56,26 @@ function draw() {
     );
   }
 }
+
+var key;
+
+document.getElementById("canvas").addEventListener('touchstart', () => {
+  if (!start) {
+    start = true;
+    play(playTime++);
+  }
+});
+
 function keyPressed() {
   if (keyCode == ENTER) {
     start = true;
-    play();
+    play(playTime++);
   }
 }
 
-function play() {
-  var audio = new Audio('theme-song.mp3');
-  audio.play();
+function play(playTime) {
+  if (playTime == 0) {
+    var audio = new Audio('theme-song.mp3');
+    audio.play();
+  }
 }
