@@ -1,0 +1,10 @@
+raw/
+.vscode/
+.ipynb_checkpoints/
+scrape_*
+js-libs
+socialblade
+missindias
+missworlds
+.gitignore
+odis*
