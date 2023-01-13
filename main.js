@@ -57,5 +57,11 @@ function draw() {
 function keyPressed() {
   if (keyCode == ENTER) {
     start = true;
+    play();
   }
+}
+
+function play() {
+  var audio = new Audio('theme-song.mp3');
+  audio.play();
 }
