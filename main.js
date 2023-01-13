@@ -46,7 +46,7 @@ function draw() {
     textAlign(CENTER);
     textSize(30);
     fill(0);
-    text('Press Enter to Start', width / 2, height / 2);
+    text('Touch or Mouse Click to Start', width / 2, height / 2);
     textSize(14);
     fill(100);
     text(
@@ -57,21 +57,19 @@ function draw() {
   }
 }
 
-var key;
-
-document.getElementById("canvas").addEventListener('touchstart', () => {
-  if (!start) {
-    start = true;
-    play(playTime++);
-  }
-});
-
-function keyPressed() {
-  if (keyCode == ENTER) {
+function touchStarted() {
+  if (start == false) {
     start = true;
     play(playTime++);
   }
 }
+
+// function keyPressed() {
+//   if (keyCode == ENTER) {
+//     start = true;
+//     play(playTime++);
+//   }
+// }
 
 function play(playTime) {
   if (playTime == 0) {
